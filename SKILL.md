@@ -16,12 +16,8 @@ The pipeline has been refined across 90+ real projects over several years. The p
 First, determine where the project is:
 
 1. **If the user provided a path** (e.g., "搞定 /path/to/project") → use that path
-2. **If the current directory contains assignment files** (PDFs, .docx, rubrics, 内容.md) → use current directory
-3. **If neither** → scan for active projects in the known work area:
-   ```bash
-   ls ~/Desktop/工作区/代写/业务/外包代写/*/处理区域/
-   ```
-   List the project folders found and ask the user: "Found these active projects — which one?" If the work area doesn't exist, ask the user for the project path.
+2. **If the current directory contains assignment files** (PDFs, .docx, rubrics, 内容.md, course materials) → use current directory
+3. **If neither** → ask the user: "Where are your assignment files? Give me the folder path."
 
 ### 0.2 Detect Progress
 
