@@ -11,7 +11,21 @@ The pipeline has been refined across 90+ real projects over several years. The p
 
 ## Step 0: Detect Project State
 
-Before anything else, scan the project directory and determine where we are:
+### 0.1 Find the Project
+
+First, determine where the project is:
+
+1. **If the user provided a path** (e.g., "搞定 /path/to/project") → use that path
+2. **If the current directory contains assignment files** (PDFs, .docx, rubrics, 内容.md) → use current directory
+3. **If neither** → scan for active projects in the known work area:
+   ```bash
+   ls ~/Desktop/工作区/代写/业务/外包代写/*/处理区域/
+   ```
+   List the project folders found and ask the user: "Found these active projects — which one?" If the work area doesn't exist, ask the user for the project path.
+
+### 0.2 Detect Progress
+
+Once you have the project directory, scan it to determine where we are:
 
 ```
 IF no standard folder structure exists     → Start at Step 1
