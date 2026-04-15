@@ -18,11 +18,24 @@ Execute these prompts as written. They have been tested across 90+ projects.
 
 ### Chart Style Requirements
 
-- High DPI (300+) for print quality
+- High DPI (200+) for print quality
 - Academic color palette (avoid garish colors)
 - Clear axis labels, titles, and legends
 - Consistent font sizes across all charts
-- Save as PNG with transparent or white background
+- Save as PNG with white background
+
+### Library Fallback Chain
+
+matplotlib may hang or crash on newer Python versions (3.14+). Use this fallback:
+
+1. **matplotlib/seaborn** — try first, set `matplotlib.use('Agg')`, test with a simple plot before committing
+2. **PIL/Pillow** — reliable fallback, available on most systems:
+   - `ImageDraw.pieslice()` for donut/pie charts
+   - `ImageDraw.rounded_rectangle()` + `ImageDraw.line()` for flowcharts/diagrams
+   - `ImageDraw.rectangle()` for bar charts
+   - `ImageFont.truetype('/System/Library/Fonts/Helvetica.ttc', size)` for macOS fonts
+   - Always test with timeout: if matplotlib doesn't return within 15 seconds, kill and switch to PIL
+3. **HTML/CSS screenshot** — last resort, generate as styled HTML and screenshot via browser tool
 
 ### When to Skip
 

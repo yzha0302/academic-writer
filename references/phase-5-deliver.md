@@ -34,6 +34,15 @@ Read `01_作业要求与评分标准/` folder for specific formatting instructio
 - Reference style (check `00_project_bible.md`; default: APA 7th)
 - Any special requirements (cover page, TOC, page numbers, etc.)
 
+### Sub-step 10.1b: Student Name Confirmation 🔴
+
+Before generating the final document, ask the user:
+- "需要在封面/文档里填写学生姓名吗？如果需要，请提供姓名。"
+- If yes → embed the name on the cover page (and header if required by the assignment)
+- If no → leave name fields blank or omit
+
+This step exists because the final file often goes directly to the client for submission. Getting the name wrong or leaving it blank when it should be filled creates unnecessary rework.
+
 ### Sub-step 10.2: User Format Choice 🔴
 
 Ask the user which delivery format:
